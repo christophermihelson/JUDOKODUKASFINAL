@@ -1,8 +1,8 @@
-package com.KODULEHT.Classes;
+package com.KODULEHT.Controller;
 
 import java.time.LocalDate;
 
-public class Member {
+public class FullMember {
 
     private Long memberID;
     private String firstName;

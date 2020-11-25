@@ -1,11 +1,14 @@
 package com.KODULEHT.Repository;
 
-import com.KODULEHT.Classes.Member;
+import com.KODULEHT.Controller.AddMember;
+import com.KODULEHT.Controller.FullMember;
+import com.KODULEHT.RowMapper.MemberRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
 
 import java.util.HashMap;
+import java.util.List;
 import java.util.Map;
 
 @Service
@@ -14,7 +17,7 @@ public class Repository {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
 
-    public void addNewMember(Member member) {
+    public void addNewMember(AddMember member) {
         String sql = "INSERT INTO member (first_name, last_name, birth_date," +
                 "level, phone, email) VALUES (:first, :last, :birthdate," +
                 ":level, :phone, :email)";
@@ -28,11 +31,20 @@ public class Repository {
         jdbcTemplate.update(sql, paramMap);
     }
 
-    public void deleteMember (Long memberID) {
+    public void deleteMember(Long memberID) {
         String sql = "DELETE FROM member WHERE member_id = :mid";
         Map<String, Long> paramMap = new HashMap<>();
         paramMap.put("mid", memberID);
         jdbcTemplate.update(sql, paramMap);
     }
+
+
+    public List<FullMember> showAllMembers() {
+        String sql = "SELECT * FROM member";
+        Map paramMap = new HashMap();
+        List<FullMember> result = jdbcTemplate.query(sql, paramMap, new MemberRowMapper());
+        return result;
+    }
+
 
 }
