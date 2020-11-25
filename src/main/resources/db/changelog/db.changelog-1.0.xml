@@ -1,0 +1,65 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<databaseChangeLog
+        xmlns="http://www.liquibase.org/xml/ns/dbchangelog"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://www.liquibase.org/xml/ns/dbchangelog
+                      http://www.liquibase.org/xml/ns/dbchangelog/dbchangelog-3.8.xsd">
+    <changeSet  author="chris_tarvi"  id="changelog-1.0">
+
+        <createTable  tableName="member">
+            <column  name="member_id"  type="bigint" autoIncrement="true">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="first_name"  type="text">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="last_name"  type="text">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="birth_date"  type="timestamp">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="level"  type="text">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="phone"  type="text">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="email"  type="text">
+                <constraints  nullable="false" primaryKey="false" unique="false"/>
+            </column>
+        </createTable>
+
+        <createTable  tableName="payment">
+
+            <column name="payment_id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+
+            <column name="member_id" type="bigint">
+                <constraints nullable="false" primaryKey="false"
+                             foreignKeyName="fk_member_id" references="member(member_id)"/>
+            </column>
+
+            <column name="date" type="timestamp">
+                <constraints nullable="true" primaryKey="false" unique="false"/>
+            </column>
+
+            <column name="payment_status" type="boolean">
+                <constraints nullable="false" primaryKey="false" unique="false"/>
+            </column>
+
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="member_nullables" author="tarvi">
+        <dropNotNullConstraint tableName="member" columnName="first_name"/>
+        <dropNotNullConstraint tableName="member" columnName="last_name"/>
+        <dropNotNullConstraint tableName="member" columnName="birth_date"/>
+        <dropNotNullConstraint tableName="member" columnName="level"/>
+        <dropNotNullConstraint tableName="member" columnName="phone"/>
+        <dropNotNullConstraint tableName="member" columnName="email"/>
+    </changeSet>
+
+</databaseChangeLog>
