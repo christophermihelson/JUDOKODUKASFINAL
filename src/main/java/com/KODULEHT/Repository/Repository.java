@@ -28,4 +28,11 @@ public class Repository {
         jdbcTemplate.update(sql, paramMap);
     }
 
+    public void deleteMember (Long memberID) {
+        String sql = "DELETE FROM member WHERE member_id = :mid";
+        Map<String, Long> paramMap = new HashMap<>();
+        paramMap.put("mid", memberID);
+        jdbcTemplate.update(sql, paramMap);
+    }
+
 }

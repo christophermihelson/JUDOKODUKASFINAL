@@ -15,4 +15,7 @@ public class MemberService {
         repository.addNewMember(member);
     }
 
+    public void deleteMember (Member member) {
+        repository.deleteMember(member.getMemberID());
+    }
 }
