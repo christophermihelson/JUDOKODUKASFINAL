@@ -1,0 +1,31 @@
+package com.KODULEHT.Repository;
+
+import com.KODULEHT.Classes.Member;
+import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
+import org.springframework.stereotype.Service;
+
+import java.util.HashMap;
+import java.util.Map;
+
+@Service
+public class Repository {
+
+    @Autowired
+    NamedParameterJdbcTemplate jdbcTemplate;
+
+    public void addNewMember(Member member) {
+        String sql = "INSERT INTO member (first_name, last_name, birth_date," +
+                "level, phone, email) VALUES (:first, :last, :birthdate," +
+                ":level, :phone, :email)";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("first", member.getFirstName());
+        paramMap.put("last", member.getLastName());
+        paramMap.put("birthdate", member.getBirthDate());
+        paramMap.put("level", member.getLevel());
+        paramMap.put("phone", member.getPhone());
+        paramMap.put("email", member.getEmail());
+        jdbcTemplate.update(sql, paramMap);
+    }
+
+}

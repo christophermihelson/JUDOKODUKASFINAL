@@ -53,4 +53,13 @@
 
     </changeSet>
 
+    <changeSet id="member_nullables" author="tarvi">
+        <dropNotNullConstraint tableName="member" columnName="first_name"/>
+        <dropNotNullConstraint tableName="member" columnName="last_name"/>
+        <dropNotNullConstraint tableName="member" columnName="birth_date"/>
+        <dropNotNullConstraint tableName="member" columnName="level"/>
+        <dropNotNullConstraint tableName="member" columnName="phone"/>
+        <dropNotNullConstraint tableName="member" columnName="email"/>
+    </changeSet>
+
 </databaseChangeLog>
