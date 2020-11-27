@@ -28,8 +28,16 @@ public class MemberService {
         repository.deleteMember(memberID);
     }
 
-    public void updateSingleMember(FullMember member) {
-        repository.updateSingleMember(member);
+    public void updateSingleMember(AddMember member, Long id) {
+        FullMember updatedMember = new FullMember();
+        updatedMember.setMemberID(id);
+        updatedMember.setFirstName(member.getFirstName());
+        updatedMember.setLastName(member.getLastName());
+        updatedMember.setBirthDate(member.getBirthDate());
+        updatedMember.setLevel(member.getLevel());
+        updatedMember.setEmail(member.getEmail());
+        updatedMember.setPhone(member.getPhone());
+        repository.updateSingleMember(updatedMember);
     }
 
     public List<FullMember> getAllMembers() {

@@ -11,6 +11,7 @@ import org.springframework.web.bind.annotation.*;
 import java.math.BigInteger;
 import java.util.List;
 
+@CrossOrigin
 @RequestMapping ("intraweb")
 @RestController
 public class MemberController {
@@ -23,22 +24,29 @@ public class MemberController {
         memberService.addSingleMember(member);
     }
 
-    @CrossOrigin
+
     @DeleteMapping ("/deletemember/{memberid}")
     public void deleteMember (@PathVariable("memberid") Long mid){
         memberService.deleteSingleMember(mid);
     }
 
-    @CrossOrigin
+
     @GetMapping ("/allmembers")
     public List<FullMember> showAllMembers (){
         return memberService.getAllMembers();
     }
 
-    @CrossOrigin
+
     @PatchMapping ("/updatemembers")
     public void updateAllMembers (@RequestBody List<FullMember> memberList){
         memberService.updateAllMembers(memberList);
+    }
+
+
+    @PatchMapping ("/update/{memberid}")
+    public void updateAllMembers (@RequestBody AddMember member,
+                                  @PathVariable("memberid") Long mid){
+        memberService.updateSingleMember(member, mid);
     }
 
     // @GetMapping ("/singlemember?id=id")
