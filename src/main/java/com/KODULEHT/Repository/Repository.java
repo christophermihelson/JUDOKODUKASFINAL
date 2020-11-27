@@ -1,7 +1,9 @@
 package com.KODULEHT.Repository;
 
+import com.KODULEHT.Classes.MemberID;
 import com.KODULEHT.Controller.AddMember;
 import com.KODULEHT.Controller.FullMember;
+import com.KODULEHT.RowMapper.MemberIDRowMapper;
 import com.KODULEHT.RowMapper.MemberRowMapper;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -43,6 +45,13 @@ public class Repository {
         String sql = "SELECT * FROM member";
         Map paramMap = new HashMap();
         List<FullMember> result = jdbcTemplate.query(sql, paramMap, new MemberRowMapper());
+        return result;
+    }
+
+    public List<MemberID> getAllMemberIDs() {
+        String sql = "SELECT member_id FROM member";
+        Map paramMap = new HashMap();
+        List<MemberID> result = jdbcTemplate.query(sql, paramMap, new MemberIDRowMapper());
         return result;
     }
 
