@@ -2,19 +2,11 @@ package com.KODULEHT.Classes;
 
 import java.time.LocalDate;
 
-public class Payment {
+public class NewPayment {
 
-    private Long paymentID;
+    private Long belongingUserID;
     private LocalDate paymentDate;
     private Boolean paymentStatus;
-
-    public Long getPaymentID() {
-        return paymentID;
-    }
-
-    public void setPaymentID(Long paymentID) {
-        this.paymentID = paymentID;
-    }
 
     public LocalDate getPaymentDate() {
         return paymentDate;
@@ -32,5 +24,12 @@ public class Payment {
         this.paymentStatus = paymentStatus;
     }
 
+    public Long getBelongingUserID() {
+        return belongingUserID;
+    }
+
+    public void setBelongingUserID(Long belongingUserID) {
+        this.belongingUserID = belongingUserID;
+    }
 
 }

@@ -1,6 +1,6 @@
 package com.KODULEHT.RowMapper;
 
-import com.KODULEHT.Controller.FullMember;
+import com.KODULEHT.Classes.FullMember;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
