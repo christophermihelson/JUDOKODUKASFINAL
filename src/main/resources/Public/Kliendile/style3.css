@@ -1,0 +1,54 @@
+body.welcome {
+    font-family: "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(90deg, black 50%, #fff 50%)
+}
+
+body {
+    font-family: "Lato", sans-serif;
+    -webkit-font-smoothing: antialiased;
+    background: linear-gradient(to right, black, black 14%, white 14%, white 86%);
+}
+
+nav {
+    font-size: 12px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    width: auto;
+}
+
+@media (min-width: 1440px) {
+    .container {
+        max-width: 1439px;
+    }
+}
+
+
+h4 {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+}
+
+h2 {
+    font-size: 20px;
+    text-transform: uppercase;
+    font-weight: 700;
+    letter-spacing: 0.2rem;
+}
+
+button {
+    font-size: 17px;
+    text-transform: uppercase;
+    font-weight: 600;
+    letter-spacing: 0.2rem;
+    color: white !important;
+}
+
+button:hover {
+    background-color: black !important;
+    color: red !important;
+}
+
