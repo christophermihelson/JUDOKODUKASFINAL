@@ -1,4 +1,4 @@
-package com.KODULEHT.Controller;
+package com.KODULEHT.Classes;
 
 import java.time.LocalDate;
 

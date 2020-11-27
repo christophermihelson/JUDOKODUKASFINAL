@@ -62,4 +62,19 @@
         <dropNotNullConstraint tableName="member" columnName="email"/>
     </changeSet>
 
+    <changeSet id="newtable" author="tarvi">
+
+        <createTable  tableName="group">
+            <column name="group_id" type="bigint" autoIncrement="true">
+                <constraints nullable="false" primaryKey="true" unique="true"/>
+            </column>
+
+            <column name="title" type="text">
+                <constraints nullable="true" primaryKey="false" unique="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+
 </databaseChangeLog>
