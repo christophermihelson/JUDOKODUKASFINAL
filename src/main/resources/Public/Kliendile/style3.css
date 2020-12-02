@@ -4,6 +4,8 @@ body {
     -webkit-font-smoothing: antialiased;
     background: url("img/back.png");
     background-size: cover;
+    background-repeat: no-repeat;
+    background-color: #24272a;
 
 }
 
@@ -12,7 +14,12 @@ nav {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2rem;
+    height: auto !important;
 
+}
+
+.navbar.navbar-collapse {
+    text-align: center;
 }
 
 .container.nav {
@@ -21,7 +28,7 @@ nav {
 
 .container.us {
     margin-top: 50px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0);
 }
 
 .container.tabel {
@@ -46,8 +53,22 @@ nav {
     .container {
         max-width: 1400px;
     }
+}
+@media (max-width:1200px){
+    .logopicture {
+        width: 80px;
+        height: 80px;
+    }
 
 }
+.custom-toggler .navbar-toggler-icon {
+    background-image: url("img/menulogo.png");
+}
+
+.custom-toggler.navbar-toggler {
+    border-color: #efefef;
+}
+
 
 h4 {
     font-size: 17px;
@@ -66,8 +87,8 @@ h2 {
 }
 
 h5 {
-    font-size: 17px;
-    font-weight: 600;
+    font-size: 15px;
+    font-weight: 500;
     letter-spacing: 0.2rem;
     color: #efefef;
 }
@@ -77,11 +98,11 @@ button {
     text-transform: uppercase;
     font-weight: 600;
     letter-spacing: 0.2rem;
-    color: white;
+    margin-right: 10px;
 }
 
 button:hover {
-    background-color: black !important;
+    background-color: transparent !important;
     color: red !important;
 }
 
@@ -94,8 +115,4 @@ button:hover {
     padding-top: 12%;
 }
 
-.navbar-nav.navbar-center {
-    position: absolute;
-    left: 50%;
-    transform: translatex(-50%);
-}
+
