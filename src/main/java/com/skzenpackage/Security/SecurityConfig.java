@@ -21,8 +21,8 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("/api/**").authenticated()
-                .antMatchers("/public/**").permitAll()
+                .antMatchers("http://localhost:8081/intraweb/**").authenticated()
+                .antMatchers("http://localhost:8080/public/**").permitAll()
                 .and()
                 .csrf().disable();
 
