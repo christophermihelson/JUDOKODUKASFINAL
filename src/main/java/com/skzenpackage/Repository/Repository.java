@@ -1,15 +1,14 @@
-package com.KODULEHT.Repository;
-
-import com.KODULEHT.Classes.AddMember;
-import com.KODULEHT.Classes.FullMember;
-import com.KODULEHT.Classes.MemberID;
-import com.KODULEHT.Classes.NewPayment;
-import com.KODULEHT.RowMapper.MemberIDRowMapper;
-import com.KODULEHT.RowMapper.MemberRowMapper;
+package com.skzenpackage.Repository;
+import com.skzenpackage.RowMapper.MemberIDRowMapper;
+import com.skzenpackage.RowMapper.MemberRowMapper;
+import com.skzenpackage.Security.SiteUser;
+import com.skzenpackage.Service.AddMember;
+import com.skzenpackage.Service.FullMember;
+import com.skzenpackage.Service.MemberByID;
+import com.skzenpackage.Service.NewPayment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
-
 import java.util.HashMap;
 import java.util.List;
 import java.util.Map;
@@ -20,12 +19,28 @@ public class Repository {
     @Autowired
     NamedParameterJdbcTemplate jdbcTemplate;
 
+    public void registerSiteUser (SiteUser siteuser){
+        String sql = "INSERT INTO siteuser (site_username, site_userpassword) VALUES (:user, :pass)";
+        Map <String, String> paramMap = new HashMap<>();
+        paramMap.put("user", siteuser.getUserName());
+        paramMap.put("pass", siteuser.getUserPassword());
+        jdbcTemplate.update(sql, paramMap);
+    }
+
+    public String getUserPassword (String username){
+        String sql = "SELECT site_userpassword FROM siteuser WHERE site_username = :sun";
+        Map<String, String> paramMap = new HashMap<>();
+        paramMap.put("sun", username);
+        return jdbcTemplate.queryForObject(sql, paramMap, String.class);
+    }
+
     public void getMemberByID(Long memberID) {
         String sql = "SELECT FROM member WHERE member_id = :mid";
         Map<String, Long> paramMap = new HashMap<>();
         paramMap.put("mid", memberID);
         jdbcTemplate.queryForObject(sql, paramMap, new MemberRowMapper());
     }
+
 
     public void newPaymentForSingleMemberByID(NewPayment newPayment) {
         String sql = "INSERT INTO payment (member_id, date, status) VALUES (:mid, :date, :status)";
@@ -60,24 +75,21 @@ public class Repository {
 
     public List<FullMember> showAllMembers() {
         String sql = "SELECT * FROM member";
-        Map paramMap = new HashMap();
-        List<FullMember> result = jdbcTemplate.query(sql, paramMap, new MemberRowMapper());
-        return result;
+        Map<String, Object> paramMap = new HashMap<>();
+        return jdbcTemplate.query(sql, paramMap, new MemberRowMapper());
     }
 
     public FullMember getSingleMember(Long memberID) {
         String sql = "SELECT * FROM member WHERE member_id = :mid";
-        Map paramMap = new HashMap();
+        Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("mid", memberID);
-        FullMember result = jdbcTemplate.queryForObject(sql, paramMap, new MemberRowMapper());
-        return result;
+        return jdbcTemplate.queryForObject(sql, paramMap, new MemberRowMapper());
     }
 
-    public List<MemberID> getAllMemberIDs() {
+    public List<MemberByID> getAllMemberIDs() {
         String sql = "SELECT member_id FROM member";
-        Map paramMap = new HashMap();
-        List<MemberID> result = jdbcTemplate.query(sql, paramMap, new MemberIDRowMapper());
-        return result;
+        Map<String, Object> paramMap = new HashMap<>();
+        return jdbcTemplate.query(sql, paramMap, new MemberIDRowMapper());
     }
 
     public void updateSingleMember(FullMember member) {

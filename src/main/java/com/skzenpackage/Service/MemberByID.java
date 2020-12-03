@@ -1,6 +1,6 @@
-package com.KODULEHT.Classes;
+package com.skzenpackage.Service;
 
-public class MemberID {
+public class MemberByID {
 
     private Long memberID;
 
