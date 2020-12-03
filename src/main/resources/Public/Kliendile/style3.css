@@ -2,7 +2,7 @@
 body {
     font-family: "Lato", sans-serif;
     -webkit-font-smoothing: antialiased;
-    background: url("img/back.jpg");
+    background: url("img/back.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #24272a;

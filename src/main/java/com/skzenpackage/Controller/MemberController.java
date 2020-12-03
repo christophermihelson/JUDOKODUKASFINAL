@@ -27,8 +27,8 @@ public class MemberController {
     }
 
     @PostMapping("/login")
-    public String loginUser(@RequestBody SiteUser siteUser) {
-        return userService.validateUser(siteUser);
+    public LoginResponse loginUser(@RequestBody SiteUser siteUser) {
+        return new LoginResponse(userService.validateUser(siteUser));
     }
 
     @PostMapping("/newmember")
