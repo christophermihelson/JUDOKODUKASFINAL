@@ -1,6 +1,6 @@
-package com.KODULEHT.RowMapper;
+package com.skzenpackage.RowMapper;
 
-import com.KODULEHT.Classes.MemberID;
+import com.skzenpackage.Service.MemberID;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

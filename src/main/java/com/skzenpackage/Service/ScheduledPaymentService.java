@@ -1,12 +1,6 @@
-package com.KODULEHT.Service;
+package com.skzenpackage.Service;
 
-import com.KODULEHT.Classes.MemberID;
-import com.KODULEHT.Repository.Repository;
-import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.scheduling.annotation.Scheduled;
 import org.springframework.stereotype.Component;
-import java.util.ArrayList;
-import java.util.List;
 
 @Component
 public class ScheduledPaymentService {

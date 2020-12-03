@@ -1,4 +1,4 @@
-package com.KODULEHT.Classes;
+package com.skzenpackage.Service;
 
 import java.time.LocalDate;
 

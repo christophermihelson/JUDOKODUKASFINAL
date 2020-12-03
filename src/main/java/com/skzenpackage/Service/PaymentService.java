@@ -1,7 +1,6 @@
-package com.KODULEHT.Service;
+package com.skzenpackage.Service;
 
-import com.KODULEHT.Classes.NewPayment;
-import com.KODULEHT.Repository.Repository;
+import com.skzenpackage.Repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
