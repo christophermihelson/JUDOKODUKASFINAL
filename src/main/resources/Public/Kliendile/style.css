@@ -29,7 +29,7 @@ nav {
 
 .container.us {
     margin-top: 50px;
-    background: rgba(0, 0, 0, 0.4);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 .container.avaleht {
@@ -39,7 +39,7 @@ nav {
 
 .container.tabel {
     padding-top: 20px;
-    background: rgba(0, 0, 0, 0.3);
+    background: rgba(0, 0, 0, 0.7);
 }
 
 footer {
