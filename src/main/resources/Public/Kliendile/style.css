@@ -2,7 +2,7 @@
 body {
     font-family: "Lato", sans-serif;
     -webkit-font-smoothing: antialiased;
-    background: url("img/back.jpg");
+    background: url("img/back.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #24272a;
@@ -29,7 +29,12 @@ nav {
 
 .container.us {
     margin-top: 50px;
-    background: rgba(0, 0, 0, 0);
+    background: rgba(0, 0, 0, 0.4);
+}
+
+.container.avaleht {
+    margin-top: 15%;
+
 }
 
 .container.tabel {
@@ -69,9 +74,12 @@ footer {
     }
 
     .container.us {
-        margin-top: 100px;
+        margin-top: 10px;
         padding-top: 100px;
 
+    }
+    .fb-page {
+        margin-top: 30px;
     }
 }
 
