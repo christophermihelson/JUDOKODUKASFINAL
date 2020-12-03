@@ -1,16 +1,16 @@
 package com.skzenpackage.RowMapper;
 
-import com.skzenpackage.Service.MemberID;
+import com.skzenpackage.Service.MemberByID;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;
 import java.sql.SQLException;
 
-public class MemberIDRowMapper implements RowMapper<MemberID> {
+public class MemberIDRowMapper implements RowMapper<MemberByID> {
 
     @Override
-    public MemberID mapRow(ResultSet resultSet, int i) throws SQLException {
-        MemberID memberID = new MemberID();
+    public MemberByID mapRow(ResultSet resultSet, int i) throws SQLException {
+        MemberByID memberID = new MemberByID();
         memberID.setMemberID(resultSet.getLong("member_id"));
         return memberID;
     }

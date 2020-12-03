@@ -4,7 +4,7 @@ import com.skzenpackage.RowMapper.MemberRowMapper;
 import com.skzenpackage.Security.SiteUser;
 import com.skzenpackage.Service.AddMember;
 import com.skzenpackage.Service.FullMember;
-import com.skzenpackage.Service.MemberID;
+import com.skzenpackage.Service.MemberByID;
 import com.skzenpackage.Service.NewPayment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
@@ -86,7 +86,7 @@ public class Repository {
         return jdbcTemplate.queryForObject(sql, paramMap, new MemberRowMapper());
     }
 
-    public List<MemberID> getAllMemberIDs() {
+    public List<MemberByID> getAllMemberIDs() {
         String sql = "SELECT member_id FROM member";
         Map<String, Object> paramMap = new HashMap<>();
         return jdbcTemplate.query(sql, paramMap, new MemberIDRowMapper());
