@@ -56,7 +56,7 @@ public class MemberController {
 
 
     @PatchMapping("/update/{memberid}")
-    public void updateAllMembers(@RequestBody AddMember member,
+    public void updateSingleMembers(@RequestBody AddMember member,
                                  @PathVariable("memberid") Long mid) {
         memberService.updateSingleMember(member, mid);
     }
