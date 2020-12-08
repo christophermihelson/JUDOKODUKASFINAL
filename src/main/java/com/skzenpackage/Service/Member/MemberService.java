@@ -1,6 +1,8 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Member;
 
 import com.skzenpackage.Repository.Repository;
+import com.skzenpackage.Service.Member.AddMember;
+import com.skzenpackage.Service.Member.FullMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 

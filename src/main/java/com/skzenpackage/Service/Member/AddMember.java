@@ -1,4 +1,4 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Member;
 
 import java.time.LocalDate;
 
@@ -10,6 +10,7 @@ public class AddMember {
     private String level;
     private String phone;
     private String email;
+    private Long group;
 
     public String getFirstName() {
         return firstName;
@@ -58,4 +59,14 @@ public class AddMember {
     public void setPhone(String phone) {
         this.phone = phone;
     }
+
+
+    public Long getGroup() {
+        return group;
+    }
+
+    public void setGroup(Long group) {
+        this.group = group;
+    }
+
 }

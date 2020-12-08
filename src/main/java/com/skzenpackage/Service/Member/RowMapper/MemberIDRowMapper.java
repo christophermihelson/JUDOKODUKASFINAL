@@ -1,6 +1,6 @@
-package com.skzenpackage.RowMapper;
+package com.skzenpackage.Service.Member.RowMapper;
 
-import com.skzenpackage.Service.MemberByID;
+import com.skzenpackage.Service.Member.MemberByID;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

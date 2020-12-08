@@ -92,5 +92,55 @@
         </createTable>
     </changeSet>
 
+    <changeSet id="add_instructor_table" author="tarvi">
+
+        <createTable  tableName="instructor">
+            <column  name="instructor_id"  type="bigint" autoIncrement="true">
+                <constraints  nullable="false"  primaryKey="true"  unique="true"/>
+            </column>
+            <column  name="first_name"  type="text">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="last_name"  type="text">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="birth_date"  type="timestamp">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="level"  type="text">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="phone"  type="text">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+            <column  name="email"  type="text">
+                <constraints  nullable="true" primaryKey="false" unique="false"/>
+            </column>
+        </createTable>
+
+    </changeSet>
+
+    <changeSet id="add_column_group" author="tarvi">
+        <addColumn tableName="group">
+            <column name="instructor_id" type="bigint">
+                <constraints nullable="false" primaryKey="false"
+                             foreignKeyName="fk_instructor_id" references="instructor(instructor_id)"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="group">
+            <column name="location" type="text">
+                <constraints nullable="true" primaryKey="false" unique="false"/>
+            </column>
+        </addColumn>
+
+        <addColumn tableName="member">
+            <column name="group_id" type="bigint">
+                <constraints nullable="true" primaryKey="false"
+                             foreignKeyName="fk_group_id" references="group(group_id)"/>
+            </column>
+        </addColumn>
+
+    </changeSet>
 
 </databaseChangeLog>

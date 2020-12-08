@@ -1,17 +1,15 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Instructor;
 
 import com.skzenpackage.Repository.Repository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 @Service
-public class PaymentService {
+public class InstructorService {
 
     @Autowired
     Repository repository;
 
-    public void newPaymentForSingleMemberByID(NewPayment newPayment) {
-        repository.newPaymentForSingleMemberByID(newPayment);
-    }
+
 
 }

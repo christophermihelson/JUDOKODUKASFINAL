@@ -1,11 +1,11 @@
 package com.skzenpackage.Repository;
-import com.skzenpackage.RowMapper.MemberIDRowMapper;
-import com.skzenpackage.RowMapper.MemberRowMapper;
+import com.skzenpackage.Service.Member.RowMapper.MemberIDRowMapper;
+import com.skzenpackage.Service.Member.RowMapper.MemberRowMapper;
 import com.skzenpackage.Security.SiteUser;
-import com.skzenpackage.Service.AddMember;
-import com.skzenpackage.Service.FullMember;
-import com.skzenpackage.Service.MemberByID;
-import com.skzenpackage.Service.NewPayment;
+import com.skzenpackage.Service.Member.AddMember;
+import com.skzenpackage.Service.Member.FullMember;
+import com.skzenpackage.Service.Member.MemberByID;
+import com.skzenpackage.Service.Payment.NewPayment;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;

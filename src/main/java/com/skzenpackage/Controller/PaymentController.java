@@ -1,7 +1,7 @@
 package com.skzenpackage.Controller;
 
-import com.skzenpackage.Service.NewPayment;
-import com.skzenpackage.Service.PaymentService;
+import com.skzenpackage.Service.Payment.NewPayment;
+import com.skzenpackage.Service.Payment.PaymentService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

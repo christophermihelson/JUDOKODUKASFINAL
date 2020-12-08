@@ -1,4 +1,4 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Member;
 
 import java.time.LocalDate;
 
