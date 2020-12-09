@@ -1,6 +1,6 @@
 package com.skzenpackage.Service.Member.RowMapper;
 
-import com.skzenpackage.Service.Member.FullMember;
+import com.skzenpackage.Service.Member.Classes.FullMember;
 import org.springframework.jdbc.core.RowMapper;
 
 import java.sql.ResultSet;

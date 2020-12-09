@@ -1,10 +1,8 @@
 package com.skzenpackage.Controller;
 
-import com.skzenpackage.Security.SiteUser;
-import com.skzenpackage.Service.Member.AddMember;
-import com.skzenpackage.Service.Member.FullMember;
+import com.skzenpackage.Service.Member.Classes.AddMember;
+import com.skzenpackage.Service.Member.Classes.FullMember;
 import com.skzenpackage.Service.Member.MemberService;
-import com.skzenpackage.Service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 

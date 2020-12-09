@@ -1,4 +1,4 @@
-package com.skzenpackage.Service.Instructor;
+package com.skzenpackage.Service.Instructor.Classes;
 
 public class InstructorByID {
 
