@@ -1,24 +1,15 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Instructor.Classes;
 
 import java.time.LocalDate;
 
-public class FullMember {
+public class AddInstructor {
 
-    private Long memberID;
     private String firstName;
     private String lastName;
     private LocalDate birthDate;
     private String level;
     private String phone;
     private String email;
-
-    public Long getMemberID() {
-        return memberID;
-    }
-
-    public void setMemberID(Long memberID) {
-        this.memberID = memberID;
-    }
 
     public String getFirstName() {
         return firstName;
@@ -52,6 +43,14 @@ public class FullMember {
         this.level = level;
     }
 
+    public String getPhone() {
+        return phone;
+    }
+
+    public void setPhone(String phone) {
+        this.phone = phone;
+    }
+
     public String getEmail() {
         return email;
     }
@@ -60,12 +59,6 @@ public class FullMember {
         this.email = email;
     }
 
-    public String getPhone() {
-        return phone;
-    }
 
-    public void setPhone(String phone) {
-        this.phone = phone;
-    }
 
 }

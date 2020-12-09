@@ -1,4 +1,4 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Member.Classes;
 
 public class MemberByID {
 

@@ -1,11 +1,12 @@
 package com.skzenpackage.Service;
 
-import com.skzenpackage.Repository.Repository;
+import com.skzenpackage.Repository.InstructorRepo;
+import com.skzenpackage.Repository.MemberRepo;
+import com.skzenpackage.Repository.UserRepo;
 import com.skzenpackage.Security.SiteUser;
 import io.jsonwebtoken.JwtBuilder;
 import io.jsonwebtoken.Jwts;
 import io.jsonwebtoken.SignatureAlgorithm;
-import liquibase.pro.packaged.D;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.security.crypto.password.PasswordEncoder;
 import org.springframework.stereotype.Service;
@@ -16,7 +17,7 @@ import java.util.Date;
 public class UserService {
 
     @Autowired
-    Repository repository;
+    UserRepo userRepo;
 
     @Autowired
     private PasswordEncoder passwordEncoder;
@@ -24,11 +25,11 @@ public class UserService {
     public void registerNewUser(SiteUser siteUser) {
         String encodedPassword = passwordEncoder.encode(siteUser.getUserPassword());
         siteUser.setUserPassword(encodedPassword);
-        repository.registerSiteUser(siteUser);
+        userRepo.registerSiteUser(siteUser);
     }
 
     public String validateUser (SiteUser siteUser) {
-        String encodedPassword = repository.getUserPassword(siteUser.getUserName());
+        String encodedPassword = userRepo.getUserPassword(siteUser.getUserName());
 
         if (passwordEncoder.matches(siteUser.getUserPassword(), encodedPassword)) {
 

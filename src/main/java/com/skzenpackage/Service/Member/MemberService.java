@@ -1,6 +1,8 @@
-package com.skzenpackage.Service;
+package com.skzenpackage.Service.Member;
 
-import com.skzenpackage.Repository.Repository;
+import com.skzenpackage.Repository.MemberRepo;
+import com.skzenpackage.Service.Member.Classes.AddMember;
+import com.skzenpackage.Service.Member.Classes.FullMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
@@ -10,18 +12,18 @@ import java.util.List;
 public class MemberService {
 
     @Autowired
-    Repository repository;
+    MemberRepo memberRepo;
 
     public FullMember getSingleMember(Long memberID) {
-        return repository.getSingleMember(memberID);
+        return memberRepo.getSingleMember(memberID);
     }
 
     public void addSingleMember(AddMember member) {
-        repository.addNewMember(member);
+        memberRepo.addNewMember(member);
     }
 
     public void deleteSingleMember(Long memberID) {
-        repository.deleteMember(memberID);
+        memberRepo.deleteMember(memberID);
     }
 
     public void updateSingleMember(AddMember member, Long id) {
@@ -33,16 +35,16 @@ public class MemberService {
         updatedMember.setLevel(member.getLevel());
         updatedMember.setEmail(member.getEmail());
         updatedMember.setPhone(member.getPhone());
-        repository.updateSingleMember(updatedMember);
+        memberRepo.updateSingleMember(updatedMember);
     }
 
     public List<FullMember> getAllMembers() {
-        return repository.showAllMembers();
+        return memberRepo.showAllMembers();
     }
 
     public void updateAllMembers(List<FullMember> memberList) {
         for (FullMember member : memberList) {
-            repository.updateSingleMember(member);
+            memberRepo.updateSingleMember(member);
         }
     }
 }

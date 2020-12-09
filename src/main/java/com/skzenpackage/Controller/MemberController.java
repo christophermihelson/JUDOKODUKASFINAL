@@ -1,10 +1,8 @@
 package com.skzenpackage.Controller;
 
-import com.skzenpackage.Security.SiteUser;
-import com.skzenpackage.Service.AddMember;
-import com.skzenpackage.Service.FullMember;
-import com.skzenpackage.Service.MemberService;
-import com.skzenpackage.Service.UserService;
+import com.skzenpackage.Service.Member.Classes.AddMember;
+import com.skzenpackage.Service.Member.Classes.FullMember;
+import com.skzenpackage.Service.Member.MemberService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -18,18 +16,7 @@ public class MemberController {
     @Autowired
     MemberService memberService;
 
-    @Autowired
-    UserService userService;
 
-    @PostMapping("/register")
-    public void registerUser(@RequestBody SiteUser siteUser) {
-        userService.registerNewUser(siteUser);
-    }
-
-    @PostMapping("/login")
-    public LoginResponse loginUser(@RequestBody SiteUser siteUser) {
-        return new LoginResponse(userService.validateUser(siteUser));
-    }
 
     @PostMapping("/newmember")
     public void addNewMember(@RequestBody AddMember member) {
@@ -56,7 +43,7 @@ public class MemberController {
 
 
     @PatchMapping("/update/{memberid}")
-    public void updateAllMembers(@RequestBody AddMember member,
+    public void updateSingleMembers(@RequestBody AddMember member,
                                  @PathVariable("memberid") Long mid) {
         memberService.updateSingleMember(member, mid);
     }
