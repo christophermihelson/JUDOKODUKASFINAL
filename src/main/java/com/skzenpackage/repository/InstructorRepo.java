@@ -3,6 +3,7 @@ package com.skzenpackage.repository;
 import com.skzenpackage.service.instructor.classes.AddInstructor;
 import com.skzenpackage.service.instructor.classes.FullInstructor;
 import com.skzenpackage.service.instructor.rowmapper.InstructorRowMapper;
+import com.skzenpackage.service.member.classes.FullMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -48,6 +49,21 @@ public class InstructorRepo {
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("iid", instructorID);
         return jdbcTemplate.queryForObject(sql, paramMap, new InstructorRowMapper());
+    }
+
+    public void updateSingleInstructor(FullInstructor instructor) {
+        String outputSQL = "UPDATE instructor SET first_name = :first, last_name = :last," +
+                "birth_date = :birth, level = :level, phone = :phone, email = :email" +
+                " WHERE instructor_id = :iid";
+        Map<String, Object> paramMap = new HashMap<>();
+        paramMap.put("iid", instructor.getInstructorID());
+        paramMap.put("first", instructor.getFirstName());
+        paramMap.put("last", instructor.getLastName());
+        paramMap.put("birth", instructor.getBirthDate());
+        paramMap.put("level", instructor.getLevel());
+        paramMap.put("phone", instructor.getPhone());
+        paramMap.put("email", instructor.getEmail());
+        jdbcTemplate.update(outputSQL, paramMap);
     }
 
 }

@@ -9,14 +9,12 @@ import org.springframework.web.bind.annotation.*;
 import java.util.List;
 
 @CrossOrigin
-@RequestMapping("intraweb")
+@RequestMapping("/intraweb")
 @RestController
 public class MemberController {
 
     @Autowired
     MemberService memberService;
-
-
 
     @PostMapping("/newmember")
     public void addNewMember(@RequestBody AddMember member) {
@@ -42,10 +40,15 @@ public class MemberController {
     }
 
 
-    @PatchMapping("/update/{memberid}")
+    @PatchMapping("/update/member/{memberid}")
     public void updateSingleMembers(@RequestBody AddMember member,
                                  @PathVariable("memberid") Long mid) {
         memberService.updateSingleMember(member, mid);
     }
+
+
+
+
+
 
 }

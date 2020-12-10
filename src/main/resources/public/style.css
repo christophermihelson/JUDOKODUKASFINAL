@@ -2,7 +2,7 @@
 body {
     font-family: "Lato", sans-serif;
     -webkit-font-smoothing: antialiased;
-    background: url("img/Untitled-2.png");
+    background: url("img/untitled-2.png");
     background-size: cover;
     background-repeat: no-repeat;
     background-color: #0b0e12;
@@ -93,7 +93,7 @@ footer {
 }
 
 .custom-toggler .navbar-toggler-icon {
-    background-image: url("img/menulogo.png");
+    background-image: url("public/img/menulogo.png");
 }
 
 .custom-toggler.navbar-toggler {
