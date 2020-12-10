@@ -46,7 +46,7 @@ nav {
 
 .container.tabel {
     padding-top: 20px;
-    background: rgba(0, 0, 0, 0.7);
+    background: rgba(0, 0, 0, 0.4);
 }
 
 footer {
@@ -161,12 +161,6 @@ button:hover {
     letter-spacing: 0.2rem;
     text-decoration: none;
     padding-top: 12%;
-}
-
-.login {
-    position: absolute;
-    top: 50%;
-    left: 42%;
 }
 
 html, body {
