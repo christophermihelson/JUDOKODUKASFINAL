@@ -1,10 +1,19 @@
 package com.skzenpackage.service.traininggroup.classes;
 
-public class AddGroup {
+public class FullGroup {
 
+    private Long groupID;
     private String location;
     private String title;
     private Long instructorID;
+
+    public Long getGroupID() {
+        return groupID;
+    }
+
+    public void setGroupID(Long groupID) {
+        this.groupID = groupID;
+    }
 
     public String getLocation() {
         return location;
