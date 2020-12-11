@@ -8,6 +8,7 @@ import org.springframework.security.config.annotation.web.configuration.WebSecur
 import org.springframework.security.config.http.SessionCreationPolicy;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.crypto.password.PasswordEncoder;
+import org.springframework.security.web.authentication.UsernamePasswordAuthenticationFilter;
 
 @Configuration
 @EnableWebSecurity
@@ -20,13 +21,12 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
         http.sessionManagement().sessionCreationPolicy(SessionCreationPolicy.STATELESS)
                 .and()
                 .authorizeRequests()
-                .antMatchers("http://localhost:8081/intraweb/**").authenticated()
-                .antMatchers("http://localhost:8080/public/**").permitAll()
+                .antMatchers("/css/**", "/img/**", "/js/**", "/*.html", "/style.css", "/favicon.ico").permitAll()
+                .antMatchers("/intraweb/login").permitAll()
+                .anyRequest().authenticated()
                 .and()
-                .csrf().disable();
-
-                //.and()
-                //.addFilterBefore(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+                .addFilterBefore(new JwtTokenFilter(), UsernamePasswordAuthenticationFilter.class)
+        .csrf().disable();
     }
 
     @Bean //annotatsioon, millega saab luua beani

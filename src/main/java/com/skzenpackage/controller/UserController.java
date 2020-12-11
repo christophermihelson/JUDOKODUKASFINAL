@@ -3,9 +3,11 @@ package com.skzenpackage.controller;
 import com.skzenpackage.security.SiteUser;
 import com.skzenpackage.service.UserService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.PostMapping;
-import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.*;
 
+@CrossOrigin
+@RequestMapping("intraweb")
+@RestController
 public class UserController {
 
 
