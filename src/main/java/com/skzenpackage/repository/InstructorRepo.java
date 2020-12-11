@@ -3,7 +3,6 @@ package com.skzenpackage.repository;
 import com.skzenpackage.service.instructor.classes.AddInstructor;
 import com.skzenpackage.service.instructor.classes.FullInstructor;
 import com.skzenpackage.service.instructor.rowmapper.InstructorRowMapper;
-import com.skzenpackage.service.member.classes.FullMember;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.jdbc.core.namedparam.NamedParameterJdbcTemplate;
 import org.springframework.stereotype.Service;
@@ -45,7 +44,7 @@ public class InstructorRepo {
     }
 
     public FullInstructor getSingleInstructor(Long instructorID) {
-        String sql = "SELECT * FROM member WHERE instructor_id = :iid";
+        String sql = "SELECT * FROM instructor WHERE instructor_id = :iid";
         Map<String, Object> paramMap = new HashMap<>();
         paramMap.put("iid", instructorID);
         return jdbcTemplate.queryForObject(sql, paramMap, new InstructorRowMapper());

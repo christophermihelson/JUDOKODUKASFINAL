@@ -143,4 +143,8 @@
 
     </changeSet>
 
+    <changeSet  author="tarvi"  id="renameTable-group">
+        <renameTable oldTableName="group" newTableName="training_group"></renameTable>
+    </changeSet>
+
 </databaseChangeLog>
